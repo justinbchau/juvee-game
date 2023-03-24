@@ -1,5 +1,6 @@
 const juvee = document.getElementById('juvee');
 const obstacle = document.getElementById('obstacle');
+const startGameButton = document.getElementById('startGameButton');
 
 function jump() {
   if (juvee.classList != 'jump') {
@@ -11,26 +12,35 @@ function jump() {
   }
 }
 
-let isAlive = setInterval(function () {
-  // get current juvee Y position
+function startGame() {
+  if (obstacle.classList != 'startedGame') {
+    obstacle.classList.add('startedGame');
 
-  let juveeTop = parseInt(
-    window.getComputedStyle(juvee).getPropertyValue('top')
-  );
+    let isAlive = setInterval(function () {
+      // get current juvee Y position
 
-  // get current obstacle X position
+      let juveeTop = parseInt(
+        window.getComputedStyle(juvee).getPropertyValue('top')
+      );
 
-  let obstacleLeft = parseInt(
-    window.getComputedStyle(obstacle).getPropertyValue('left')
-  );
+      // get current obstacle X position
 
-  // detect collision
+      let obstacleLeft = parseInt(
+        window.getComputedStyle(obstacle).getPropertyValue('left')
+      );
 
-  if (obstacleLeft < 50 && obstacleLeft > 0 && juveeTop >= 140) {
-    alert('Game Over!');
+      // detect collision
+
+      if (obstacleLeft < 50 && obstacleLeft > 0 && juveeTop >= 140) {
+        alert('Game Over!');
+        obstacle.classList.remove('startedGame');
+      }
+    }, 10);
+
+    document.addEventListener('keydown', function (event) {
+      jump();
+    });
   }
-}, 10);
+}
 
-document.addEventListener('keydown', function (event) {
-  jump();
-});
+startGameButton.addEventListener('click', startGame);

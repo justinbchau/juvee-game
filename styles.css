@@ -49,9 +49,12 @@
   border-radius: 50%;
   top: 110px;
   left: 560px;
+}
 
+.startedGame {
   animation: block 1s infinite linear;
 }
+
 
 @keyframes block {
   0% {
@@ -61,4 +64,43 @@
   100% {
     left: -40px;
   }
+}
+
+#start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 100% of the viewport height */
+  width: 100vw; /* 100% of the viewport width */
+  position: absolute;
+  top: -100px;
+  left: 0;
+}
+
+#startGameButton {
+  font-family: "Arial", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #FF5733; /* Change this to the logo's background color */
+  color: #FFFFFF; /* Change this to the logo's text color */
+  border: none;
+  border-radius: 5px;
+  padding: 20px 60px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+}
+
+/* Button hover effect */
+#startGameButton:hover {
+  background-color: #FF6F47; /* Change this to a slightly lighter version of the logo's background color */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Button active effect */
+#startGameButton:active {
+  background-color: #FF6F47; /* Change this to a slightly darker version of the logo's background color */
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
 }
