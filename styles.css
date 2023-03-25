@@ -5,10 +5,19 @@
   margin: auto;
 }
 
+#canSelection {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  position: absolute;
+  top: 40vh; /* Position the can selection area below the button container */
+  width: 100%; /* Use the full width of the viewport */
+}
+
 #juvee {
   width: 50px;
   height: 50px;
-  background: url(img/blueRazz.png);
+  /* background: url(img/blueRazz.png); */
   background-size: 50px 50px;
   position: relative;
   top: 150px;
@@ -70,10 +79,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* 100% of the viewport height */
+  height: 30vh; /* Change to 30% of the viewport height */
   width: 100vw; /* 100% of the viewport width */
   position: absolute;
-  top: -100px;
+  top: 130px;
   left: 0;
 }
 
